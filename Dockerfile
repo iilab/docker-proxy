@@ -12,6 +12,7 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 #fix for long server names
 RUN sed -i 's/# server_names_hash_bucket/server_names_hash_bucket/g' /etc/nginx/nginx.conf
+ADD log_format.conf /etc/nginx/conf.d/log_format.conf
 
 RUN mkdir /app
 WORKDIR /app
